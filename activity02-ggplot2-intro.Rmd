@@ -189,7 +189,7 @@ In the above code chunk, continue to play around with having the aesthetics mapp
 For example, how does having all of them mapped in the `ggplot` call compared to having these instead mapped in the `geom_boxplot` layer?
 Comment on what you notice.
 
-**Response**: Warning ang error blank ploat
+**Response**: Warning and error blank plot
 
 
 Knit, stage, commit (with a meaningful commit message),and push everything in your **Git** pane to your GitHub repo.
@@ -207,20 +207,39 @@ Create graphs to explore the relationship between `bill_length_mm` and each of `
 Using these three graphs to discuss which of these three categorical variables seems to be contributing more to these two peaks and explain your reasoning.
 
 ```{r bill_length_by_species}
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins,mapping = aes(x = bill_length_mm , y = species, color= species) )+
+  geom_boxplot()
+  
 
 ```
 
 
 ```{r bill_length_by_sex}
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins,mapping = aes(x = bill_length_mm , y = sex, color= sex) )+
+  geom_boxplot()
+  
+
 
 ```
 
 
 ```{r bill_length_by_island}
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins,mapping = aes(x = bill_length_mm , y = islands, color= sex) )+
+  geom_boxplot()
+  
 
 ```
 
-**Response**:
+**Response**: in  have noticed the distribution of bill_length_mm vs ,island ,sex,spe
 
 
 Knit, stage, commit (with a meaningful commit message),and push everything in your **Git** pane to your GitHub repo.
@@ -234,35 +253,50 @@ Here we continue exploring scatterplots using `{ggplot2}`.
 In the code chunk below, create a scatterplot for the relationship between `flipper_length_mm` and `body_mass_g`.
 
 ```{r flipper_vs_mass}
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins , mapping = aes(x = flipper_length_mm , y = body_mass_g ))+
+  geom_point()
+
 
 ```
 
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: points are scattered as 
 
 
 Recreate your scatterplot in the code chunk below; however,  *map* `species` to the `color` and `shape` aesthetics.
 
 ```{r flipper_vs_mass_with_species}
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins , mapping = aes(x = flipper_length_mm , y = body_mass_g ,color = species))+
+  geom_point()
 
 ```
 
 Describe any patterns that you notice.
 
-**Response**:
+**Response**: like a map  can not identify the plae
 
 
 The previous plot looked great except even in this rather small dataset (n = 344), there might are a number of points overlapping.
 In the R code chunk below, *set* the values (instead of mapping a variable to an aesthetic) of `size` (using some value larger than zero) and `alpha` (using some value between 0 and 1) to make your previous plot more effective.
 
 ```{r flipper_vs_mass_with_size_alpha}
-
+library(palmerpenguins)
+library(ggplot2)
+penguins
+ggplot(data = penguins , mapping = aes(x = flipper_length_mm , y = body_mass_g ,color = ))+
+  geom_point(size = 5 , alpha = 1)
 ```
 
 Discuss the decisions you made to help your plot be easier to read.
 
-**Response**:
+**Response**: like a map with with size difference
 
 
 Knit, stage, commit (with a meaningful commit message),and push everything in your **Git** pane to your GitHub repo.
